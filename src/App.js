@@ -1,25 +1,47 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Newfile2 from './compponent/Newfile2';
+import Webserviceone from './compponent/Webserviceone';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+class App extends React.Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+          error: null,
+          isLoaded: false,
+          items: [],
+          flag:0
+        };
+  }
+
+
+MyThirdButton=()=>{
+  alert('In the Name Of Allah');
+}
+
+
+  render() {
+
+  return(
+    <div>
+      <Webserviceone />
+      <Newfile2 />
+  
+   <button onClick={this.MyThirdButton}>Third Button</button>
+
+
+
     </div>
-  );
+    );
+
+  }
+
+  componentDidMount(){
+      console.log("Checking Console");
+  }
+
 }
 
 export default App;
